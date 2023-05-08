@@ -11,14 +11,14 @@
         public const int DefaultSpeed = 150;
 
         //size of rectangle
-        //public const int SizeInPixeles = 15;
+        //public const int SizeInPixels = 15;
         public const int SizeInPixels = 40;
 
-        //for check name length
+        // to  check name length
         public const string MessageAbouteIncorrectNameLength = "The name you entered is too long (maximum {0} characters)";
         public const int MaxLengthForName = 25;
 
-        //for print records
+        // to print records
         public const int MaxLengthForRecordString = 40;
         public const int SpacesLengthForRecordString = 2;
         public const int ScoreLengthForRecordString = 5;

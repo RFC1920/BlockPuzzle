@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.Entity;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinTetris
@@ -20,7 +14,7 @@ namespace WinTetris
         [DllImport("user32.dll")]
         public static extern short GetAsyncKeyState(int key);
 
-        bool spaceIsPressed;
+        //bool spaceIsPressed;
 
         private Bitmap _bitField;
         private Bitmap _bitFigure;
@@ -93,10 +87,14 @@ namespace WinTetris
             btnChangeGameStatus.Text = Constants.StatusGamePlay;
             btnStop.Enabled = false;
 
-            //create new score and 
+            // Play end game sound
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Windows\Media\notify.wav");
+            player.Play();
+
+            // create new score and 
             AddNewRecordIfNeccessary();
 
-            //reset images
+            // reset images
             pctGameField.Image = null;
             pctNext.Image = null;
         }

@@ -43,7 +43,11 @@ namespace WinTetris
         /// </summary>
         public void Start()
         {
-            NextFigure = FigureGenerator.Generate(_startColumn);
+            //NextFigure = FigureGenerator.Generate(_startColumn);
+            Random random = new Random();
+            int generatedValue = random.Next(1, Width);
+            NextFigure = FigureGenerator.Generate(generatedValue);
+
             Thread.Sleep(25); //because computer generate two the same figure without it
             CurrentFigure = FigureGenerator.Generate(_startColumn);
 
@@ -83,7 +87,7 @@ namespace WinTetris
 
                 //check for end of game(can't insert figure in game field)
                 bool isEnd = CurrentFigure.IsCorrect(GameField);
-                if (!isEnd)
+                if (!isEnd | allTheWay)
                 {
                     OnEndOfGame.Invoke();
                 }
@@ -198,6 +202,8 @@ namespace WinTetris
             }
 
             AddEmptyRowToTheTop(countOfFilledRow);
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Windows\Media\chimes.wav");
+            player.Play();
         }
 
         /// <summary>

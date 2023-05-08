@@ -81,7 +81,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(938, 919);
+            this.tabControl1.Size = new System.Drawing.Size(934, 907);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
@@ -99,7 +99,7 @@
             this.tbpPlay.Location = new System.Drawing.Point(4, 29);
             this.tbpPlay.Name = "tbpPlay";
             this.tbpPlay.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpPlay.Size = new System.Drawing.Size(930, 886);
+            this.tbpPlay.Size = new System.Drawing.Size(926, 874);
             this.tbpPlay.TabIndex = 0;
             this.tbpPlay.Text = "Play";
             this.tbpPlay.UseVisualStyleBackColor = true;
@@ -128,7 +128,7 @@
             // lblRecord
             // 
             this.lblRecord.AutoSize = true;
-            this.lblRecord.Location = new System.Drawing.Point(786, 284);
+            this.lblRecord.Location = new System.Drawing.Point(786, 294);
             this.lblRecord.Name = "lblRecord";
             this.lblRecord.Size = new System.Drawing.Size(18, 20);
             this.lblRecord.TabIndex = 20;
@@ -145,9 +145,9 @@
             // 
             // pctNext
             // 
-            this.pctNext.Location = new System.Drawing.Point(811, 135);
+            this.pctNext.Location = new System.Drawing.Point(754, 135);
             this.pctNext.Name = "pctNext";
-            this.pctNext.Size = new System.Drawing.Size(72, 111);
+            this.pctNext.Size = new System.Drawing.Size(153, 146);
             this.pctNext.TabIndex = 18;
             this.pctNext.TabStop = false;
             // 
@@ -193,7 +193,7 @@
             this.tbpRecords.Controls.Add(this.lblRecords);
             this.tbpRecords.Location = new System.Drawing.Point(4, 29);
             this.tbpRecords.Name = "tbpRecords";
-            this.tbpRecords.Size = new System.Drawing.Size(500, 444);
+            this.tbpRecords.Size = new System.Drawing.Size(926, 874);
             this.tbpRecords.TabIndex = 2;
             this.tbpRecords.Text = "Leader board";
             this.tbpRecords.UseVisualStyleBackColor = true;
@@ -224,7 +224,7 @@
             this.tbpSettings.Location = new System.Drawing.Point(4, 29);
             this.tbpSettings.Name = "tbpSettings";
             this.tbpSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpSettings.Size = new System.Drawing.Size(500, 444);
+            this.tbpSettings.Size = new System.Drawing.Size(926, 874);
             this.tbpSettings.TabIndex = 1;
             this.tbpSettings.Text = "Settings";
             this.tbpSettings.UseVisualStyleBackColor = true;
@@ -373,7 +373,7 @@
             this.tbpHelp.Controls.Add(this.label7);
             this.tbpHelp.Location = new System.Drawing.Point(4, 29);
             this.tbpHelp.Name = "tbpHelp";
-            this.tbpHelp.Size = new System.Drawing.Size(500, 444);
+            this.tbpHelp.Size = new System.Drawing.Size(926, 874);
             this.tbpHelp.TabIndex = 3;
             this.tbpHelp.Text = "Help";
             this.tbpHelp.UseVisualStyleBackColor = true;
@@ -395,7 +395,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 918);
+            this.ClientSize = new System.Drawing.Size(923, 906);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
