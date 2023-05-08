@@ -48,7 +48,7 @@ namespace WinTetris
             int generatedValue = random.Next(1, Width);
             NextFigure = FigureGenerator.Generate(generatedValue);
 
-            Thread.Sleep(25); //because computer generate two the same figure without it
+            Thread.Sleep(25); //because computer generates two of the same figure without it
             CurrentFigure = FigureGenerator.Generate(_startColumn);
 
             CurrentFigure.ChangeFigurePosition += InvokeRefresh;
@@ -94,6 +94,8 @@ namespace WinTetris
             }
 
             ChangedGameField.Invoke();
+            //System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.histicks);
+            //player.Play();
         }
 
         /// <summary>
@@ -109,6 +111,8 @@ namespace WinTetris
             {
                 return;
             }
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.chimes);
+            player.Play();
 
             RefreshGameFieldAfterFilledRows(filledRows, countOfFilledRow);
             AddScoreAndLines(countOfFilledRow);
@@ -202,8 +206,6 @@ namespace WinTetris
             }
 
             AddEmptyRowToTheTop(countOfFilledRow);
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Windows\Media\chimes.wav");
-            player.Play();
         }
 
         /// <summary>

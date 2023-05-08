@@ -40,5 +40,6 @@ C:\Users\mlott\Source\Repos\winTetris\bin\Debug\System.Diagnostics.DiagnosticSou
 C:\Users\mlott\Source\Repos\winTetris\bin\Debug\System.Memory.xml
 C:\Users\mlott\Source\Repos\winTetris\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\mlott\Source\Repos\winTetris\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\mlott\Source\Repos\winTetris\obj\Debug\WinTetris.csproj.ResolveComReference.cache
 C:\Users\mlott\Source\Repos\winTetris\obj\Debug\WinTetris.csproj.Fody.CopyLocal.cache
 C:\Users\mlott\Source\Repos\winTetris\obj\Debug\WinTetris.csproj.Fody.RuntimeCopyLocal.cache

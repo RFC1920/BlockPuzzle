@@ -153,7 +153,7 @@
             // 
             // pctGameField
             // 
-            this.pctGameField.Location = new System.Drawing.Point(8, 6);
+            this.pctGameField.Location = new System.Drawing.Point(8, 3);
             this.pctGameField.Name = "pctGameField";
             this.pctGameField.Size = new System.Drawing.Size(740, 858);
             this.pctGameField.TabIndex = 17;
@@ -162,7 +162,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(384, 325);
+            this.label9.Location = new System.Drawing.Point(810, 345);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(47, 20);
             this.label9.TabIndex = 14;
@@ -171,7 +171,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(384, 264);
+            this.label8.Location = new System.Drawing.Point(810, 294);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 20);
             this.label8.TabIndex = 13;

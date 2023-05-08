@@ -51,8 +51,7 @@ namespace WinTetris
 
             //work with records
             List<Player> players = WorkWithRecords.GetPlayers();
-            string records = RecordHandler.GetRecords(players);
-            lblRecords.Text = records;
+            lblRecords.Text = RecordHandler.GetRecords(players);
         }
 
         private void btnEditSettings_Click(object sender, EventArgs e)
@@ -88,7 +87,7 @@ namespace WinTetris
             btnStop.Enabled = false;
 
             // Play end game sound
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Windows\Media\notify.wav");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.notify);
             player.Play();
 
             // create new score and 
