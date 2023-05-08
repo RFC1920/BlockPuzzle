@@ -1,5 +1,4 @@
 ﻿using System.Drawing;
-using System.Linq;
 
 namespace WinTetris
 {
@@ -12,9 +11,8 @@ namespace WinTetris
         /// <returns>brush for draw</returns>
         public static Brush GetColor(TypeOfCell cell)
         {
-            Figure[] figures = new Figure[] { new FigureI(0), new FigureO(0), new FigureT(0),
-            new FigureS(0), new FigureZ(0), new FigureL(0), new FigureJ(0)};
-            return figures.FirstOrDefault(figure => figure.TypeOfCell == cell).Color;
+            Figure[] figures = new Figure[] { new FigureI(0), new FigureO(0), new FigureT(0), new FigureS(0), new FigureZ(0), new FigureL(0), new FigureJ(0)};
+            return System.Array.Find(figures, figure => figure.TypeOfCell == cell).Color;
         }
     }
 }

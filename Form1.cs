@@ -246,7 +246,10 @@ namespace WinTetris
             {
                 _game.CurrentFigure.MoveRight(_game.GameField);
             }
-
+            else if (keyData == Keys.Escape)
+            {
+                btnChangeGameStatus.PerformClick();
+            }
             return true;
         }
 

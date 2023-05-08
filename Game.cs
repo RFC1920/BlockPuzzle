@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace WinTetris
 {
@@ -161,7 +157,7 @@ namespace WinTetris
                 }
 
                 //exit if we will not can meet filled row
-                if (isEmpty || filledRow[0] - 3 >= row && filledRow[0] >= 0)
+                if (isEmpty || (filledRow[0] - 3 >= row && filledRow[0] >= 0))
                 {
                     return filledRow;
                 }

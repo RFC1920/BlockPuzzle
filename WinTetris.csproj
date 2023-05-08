@@ -71,9 +71,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Class1.cs">
-      <SubType>Form</SubType>
-    </None>
     <Compile Include="ColorsByTypeOFCell.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Figure\Figure.cs" />
@@ -123,7 +120,7 @@
       <DependentUpon>frmInputName.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Player.db" />
+    <None Include="_Player.db" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
