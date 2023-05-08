@@ -16,15 +16,15 @@ namespace WinTetris
         public event ShowScoreAndLines ChangedScoreAndLines;
 
         private int _startColumn;
-        private int _score = 0;
-        private int _lines = 0;
+        private int _score;
+        private int _lines;
 
-        public TypeOfCell[,] GameField { get; private set; }
+        public TypeOfCell[,] GameField { get; }
         public Figure CurrentFigure { get; private set; }
         public Figure NextFigure { get; private set; }
-        public int Width { get; private set; }
-        public int Deep { get; private set; }
-        public int Interval { get; private set; }
+        public int Width { get; }
+        public int Deep { get; }
+        public int Interval { get; }
 
         public Game()
         {
@@ -55,7 +55,7 @@ namespace WinTetris
         }
 
         /// <summary>
-        /// move figure downm generate new one and finish the game
+        /// move figure down generate new one and finish the game
         /// </summary>
         public void MoveFigureDown(TypeOfCell[,] gameField, bool allTheWay = false)
         {

@@ -21,7 +21,6 @@
         }
 
         #region Windows Form Designer generated code
-
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
@@ -84,14 +83,13 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmInputName";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Введите своё имя";
+            this.Text = "Enter your name";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmInputName_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmInputName_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-
         #endregion
 
         private System.Windows.Forms.Button btnOk;

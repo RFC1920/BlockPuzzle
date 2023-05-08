@@ -81,7 +81,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(508, 477);
+            this.tabControl1.Size = new System.Drawing.Size(938, 919);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
@@ -99,7 +99,7 @@
             this.tbpPlay.Location = new System.Drawing.Point(4, 29);
             this.tbpPlay.Name = "tbpPlay";
             this.tbpPlay.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpPlay.Size = new System.Drawing.Size(500, 444);
+            this.tbpPlay.Size = new System.Drawing.Size(930, 886);
             this.tbpPlay.TabIndex = 0;
             this.tbpPlay.Text = "Play";
             this.tbpPlay.UseVisualStyleBackColor = true;
@@ -108,7 +108,7 @@
             // 
             this.btnStop.Enabled = false;
             this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnStop.Location = new System.Drawing.Point(388, 388);
+            this.btnStop.Location = new System.Drawing.Point(790, 388);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(93, 37);
             this.btnStop.TabIndex = 22;
@@ -119,7 +119,7 @@
             // lblLines
             // 
             this.lblLines.AutoSize = true;
-            this.lblLines.Location = new System.Drawing.Point(384, 345);
+            this.lblLines.Location = new System.Drawing.Point(786, 345);
             this.lblLines.Name = "lblLines";
             this.lblLines.Size = new System.Drawing.Size(18, 20);
             this.lblLines.TabIndex = 21;
@@ -128,7 +128,7 @@
             // lblRecord
             // 
             this.lblRecord.AutoSize = true;
-            this.lblRecord.Location = new System.Drawing.Point(384, 284);
+            this.lblRecord.Location = new System.Drawing.Point(786, 284);
             this.lblRecord.Name = "lblRecord";
             this.lblRecord.Size = new System.Drawing.Size(18, 20);
             this.lblRecord.TabIndex = 20;
@@ -137,7 +137,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(384, 112);
+            this.label10.Location = new System.Drawing.Point(786, 112);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(45, 20);
             this.label10.TabIndex = 19;
@@ -145,7 +145,7 @@
             // 
             // pctNext
             // 
-            this.pctNext.Location = new System.Drawing.Point(409, 135);
+            this.pctNext.Location = new System.Drawing.Point(811, 135);
             this.pctNext.Name = "pctNext";
             this.pctNext.Size = new System.Drawing.Size(72, 111);
             this.pctNext.TabIndex = 18;
@@ -155,7 +155,7 @@
             // 
             this.pctGameField.Location = new System.Drawing.Point(8, 6);
             this.pctGameField.Name = "pctGameField";
-            this.pctGameField.Size = new System.Drawing.Size(370, 429);
+            this.pctGameField.Size = new System.Drawing.Size(740, 858);
             this.pctGameField.TabIndex = 17;
             this.pctGameField.TabStop = false;
             // 
@@ -180,7 +180,7 @@
             // btnChangeGameStatus
             // 
             this.btnChangeGameStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnChangeGameStatus.Location = new System.Drawing.Point(388, 44);
+            this.btnChangeGameStatus.Location = new System.Drawing.Point(790, 46);
             this.btnChangeGameStatus.Name = "btnChangeGameStatus";
             this.btnChangeGameStatus.Size = new System.Drawing.Size(93, 37);
             this.btnChangeGameStatus.TabIndex = 12;
@@ -247,7 +247,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label5.Location = new System.Drawing.Point(43, 271);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(412, 128);
+            this.label5.Size = new System.Drawing.Size(367, 112);
             this.label5.TabIndex = 10;
             this.label5.Text = resources.GetString("label5.Text");
             // 
@@ -258,10 +258,10 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label3.Location = new System.Drawing.Point(43, 166);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(404, 48);
+            this.label3.Size = new System.Drawing.Size(408, 48);
             this.label3.TabIndex = 9;
-            this.label3.Text = "    The depth of the playing field cannot be less than 10 cells\r\nand there can be no pain"
-                + "more than 28 cells (recommended value is \r\n 20 cells).";
+            this.label3.Text = "    The depth of the playing field cannot be less than 10 cells\r\nand there can be" +
+    " no painmore than 28 cells (recommended value is \r\n 20 cells).";
             // 
             // label2
             // 
@@ -270,10 +270,10 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(43, 68);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(403, 48);
+            this.label2.Size = new System.Drawing.Size(366, 48);
             this.label2.TabIndex = 8;
-            this.label2.Text = "    The width of the playing field cannot be less than 4 squares\r\nand cannot be more"
-                + " 22 cells (recommended value is \r\n 10 cells).";
+            this.label2.Text = "    The width of the playing field cannot be less than 4 squares\r\nand cannot be m" +
+    "ore 22 cells (recommended value is \r\n 10 cells).";
             // 
             // nudSpeed
             // 
@@ -302,7 +302,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(42, 244);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(201, 20);
+            this.label6.Size = new System.Drawing.Size(103, 20);
             this.label6.TabIndex = 6;
             this.label6.Text = "Falling speed";
             // 
@@ -333,7 +333,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(42, 139);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(184, 20);
+            this.label4.Size = new System.Drawing.Size(137, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Playing field depth";
             // 
@@ -364,7 +364,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(42, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 20);
+            this.label1.Size = new System.Drawing.Size(133, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Playing field width";
             // 
@@ -383,7 +383,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(3, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(496, 440);
+            this.label7.Size = new System.Drawing.Size(762, 520);
             this.label7.TabIndex = 0;
             this.label7.Text = resources.GetString("label7.Text");
             // 
@@ -395,7 +395,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(497, 476);
+            this.ClientSize = new System.Drawing.Size(927, 918);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
@@ -418,6 +418,7 @@
             this.tbpHelp.ResumeLayout(false);
             this.tbpHelp.PerformLayout();
             this.ResumeLayout(false);
+
         }
         #endregion
 

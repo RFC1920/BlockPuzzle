@@ -20,7 +20,7 @@ namespace WinTetris
         [DllImport("user32.dll")]
         public static extern short GetAsyncKeyState(int key);
 
-        bool spaceIsPressed = false;
+        bool spaceIsPressed;
 
         private Bitmap _bitField;
         private Bitmap _bitFigure;
@@ -113,8 +113,8 @@ namespace WinTetris
             _game = new Game();
 
             //general settings
-            _bitField = new Bitmap(Constants.SizeInPixeles * _game.Width + 1, Constants.SizeInPixeles * _game.Deep + 1);
-            _bitFigure = new Bitmap(Constants.SizeInPixeles * 3 + 1, Constants.SizeInPixeles * 4 + 1);
+            _bitField = new Bitmap(Constants.SizeInPixels * _game.Width + 1, Constants.SizeInPixels * _game.Deep + 1);
+            _bitFigure = new Bitmap(Constants.SizeInPixels * 3 + 1, Constants.SizeInPixels * 4 + 1);
             _graphicsForField = Graphics.FromImage(_bitField);
             _graphicsForFigure = Graphics.FromImage(_bitFigure);
 
@@ -148,7 +148,7 @@ namespace WinTetris
         public void ShowNextFigure()
         {
             _graphicsForFigure.Clear(_backColorForFigure);
-            int size = Constants.SizeInPixeles;
+            int size = Constants.SizeInPixels;
 
             //draw next figure
             Point[] figure = _game.NextFigure.Configuration;
@@ -167,7 +167,7 @@ namespace WinTetris
         public void ShowField()
         {
             _graphicsForField.Clear(_backColorForField);
-            const int size = Constants.SizeInPixeles;
+            const int size = Constants.SizeInPixels;
             Pen pensBackColor = Pens.Black;
 
             //draw game field
@@ -250,30 +250,34 @@ namespace WinTetris
             {
                 btnChangeGameStatus.PerformClick();
             }
+            else if (keyData == Keys.Space)
+            {
+                _game.MoveFigureDown(_game.GameField, true);
+            }
             return true;
         }
 
-        public void CheckKey()
-        {
-            try
-            {
-                while (true)
-                {
-                    if ((GetAsyncKeyState(32) & 0x8000) > 0)
-                    {
-                        spaceIsPressed = true;
-                        _game.MoveFigureDown(_game.GameField, true);
-                    }
-                    else
-                    {
-                        if (spaceIsPressed)
-                            spaceIsPressed = false;
-                    }
-                    Thread.Sleep(200);
-                }
-            }
-            catch (ThreadInterruptedException ex) { }
-        }
+        //public void CheckKey()
+        //{
+        //    try
+        //    {
+        //        while (true)
+        //        {
+        //            if ((GetAsyncKeyState(32) & 0x8000) > 0)
+        //            {
+        //                spaceIsPressed = true;
+        //                _game.MoveFigureDown(_game.GameField, true);
+        //            }
+        //            else
+        //            {
+        //                if (spaceIsPressed)
+        //                    spaceIsPressed = false;
+        //            }
+        //            Thread.Sleep(200);
+        //        }
+        //    }
+        //    catch (ThreadInterruptedException ex) { }
+        //}
 
         private void timer_Tick(object sender, EventArgs e) => _game?.MoveFigureDown(_game.GameField);
 
