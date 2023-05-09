@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Drawing;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace WinTetris
@@ -10,9 +9,6 @@ namespace WinTetris
     public partial class Form1 : Form
     {
         private Game _game;
-
-        [DllImport("user32.dll")]
-        public static extern short GetAsyncKeyState(int key);
 
         //bool spaceIsPressed;
 
@@ -176,7 +172,7 @@ namespace WinTetris
                     if (value < TypeOfCell.Static)
                     {
                         Brush colorr = ColorsByTypeOFCell.GetColor(value);
-                        _graphicsForField.FillRectangle(colorr, j * size, i * size, size, size); 
+                        _graphicsForField.FillRectangle(colorr, j * size, i * size, size, size);
                         _graphicsForField.DrawRectangle(pensBackColor, j * size, i * size, size, size);
                     }
                 }
@@ -214,19 +210,20 @@ namespace WinTetris
             {
                 _game.CurrentFigure.MoveRight(_game.GameField);
             }
-            else if (e.KeyCode == Keys.Space)
-            {
-                _game.MoveFigureDown(_game.GameField, true);
-            }
-            else if (e.KeyCode == Keys.Escape)
-            {
-                btnChangeGameStatus.PerformClick();
-            }
+            //else if (e.KeyCode == Keys.Space)
+            //{
+            //    _game.MoveFigureDown(_game.GameField);
+            //}
+            //else if (e.KeyCode == Keys.Escape)
+            //{
+            //    btnChangeGameStatus.PerformClick();
+            //}
         }
 
         // Handle arrow keys (command keys)
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
+            if (_game == null) return false;
             if (keyData == Keys.Up)
             {
                 _game.CurrentFigure.Rotate(_game.GameField);
@@ -249,7 +246,10 @@ namespace WinTetris
             }
             else if (keyData == Keys.Space)
             {
-                _game.MoveFigureDown(_game.GameField, true);
+                _game.CurrentFigure.Fall(_game.GameField);
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.histicks);
+                player.Play();
+
             }
             return true;
         }
@@ -284,7 +284,7 @@ namespace WinTetris
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show(Constants.ExitGameText, Constants.ExitGameCaption, MessageBoxButtons.YesNo);
-            if(result != DialogResult.Yes)
+            if (result != DialogResult.Yes)
             {
                 e.Cancel = true;
             }

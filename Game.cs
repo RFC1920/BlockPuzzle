@@ -61,9 +61,8 @@ namespace WinTetris
         /// <summary>
         /// move figure down generate new one and finish the game
         /// </summary>
-        public void MoveFigureDown(TypeOfCell[,] gameField, bool allTheWay = false)
+        public void MoveFigureDown(TypeOfCell[,] gameField)
         {
-            // TODO - Add allTheWay down move
             //move figure down by one
             bool isFall = CurrentFigure.MoveDown(GameField);
             if (!isFall)
@@ -87,15 +86,13 @@ namespace WinTetris
 
                 //check for end of game(can't insert figure in game field)
                 bool isEnd = CurrentFigure.IsCorrect(GameField);
-                if (!isEnd | allTheWay)
+                if (!isEnd)
                 {
                     OnEndOfGame.Invoke();
                 }
             }
 
             ChangedGameField.Invoke();
-            //System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.histicks);
-            //player.Play();
         }
 
         /// <summary>

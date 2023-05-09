@@ -7,10 +7,10 @@ namespace WinTetris
     {
         /// <summary>
         /// Save setting in file
-        /// </summary>
         /// <param name="deep">deep for save</param>
         /// <param name="width">width for save </param>
         /// <param name="speed">speed for save</param>
+        /// </summary>
         public static void SaveSettings(int deep, int width, int speed)
         {
             CreateFileIfItIsNotExist();
@@ -31,10 +31,10 @@ namespace WinTetris
 
         /// <summary>
         /// Write data in file
-        /// </summary>
         /// <param name="deepForWrite">deep for write in file</param>
         /// <param name="widthForWrite">width for write in file</param>
         /// <param name="speedForWrite">speed for write in file</param>
+        /// </summary>
         private static void WriteData(int deep, int width, int speed)
         {
             using (StreamWriter sw = new StreamWriter(Constants.PathOfSettingFile))
@@ -47,8 +47,8 @@ namespace WinTetris
 
         /// <summary>
         /// get saved settings or default
-        /// </summary>
         /// <returns>settings</returns>
+        /// </summary>
         public static (int deep, int width, int speed) GetSettings()
         {
             if (!File.Exists(Constants.PathOfSettingFile))
@@ -64,8 +64,8 @@ namespace WinTetris
 
         /// <summary>
         /// Read data from file
-        /// </summary>
         /// <returns>read data converted to integer</returns>
+        /// </summary>
         private static (int deep, int width, int speed) ReadData()
         {
             int deep;
@@ -84,8 +84,8 @@ namespace WinTetris
 
         /// <summary>
         /// set default setting and save it in file
-        /// </summary>
         /// <returns></returns>
+        /// </summary>
         private static (int deep, int width, int speed) SetDefaultSetting()
         {
             SaveSettings(Constants.DefaultDeep, Constants.DefaultWidth, Constants.DefaultSpeed);

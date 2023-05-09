@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WinTetris
 {
@@ -19,8 +16,8 @@ namespace WinTetris
 
         /// <summary>
         /// find start position of figure on the ggame field
-        /// </summary>
         /// <param name="width">width of game field</param>
+        /// </summary>
         protected void FindStartPosition(int startColumn)
         {
             Position = new Point[4]
@@ -34,9 +31,9 @@ namespace WinTetris
 
         /// <summary>
         /// check if the figure has correct position on the game field
-        /// </summary>
         /// <param name="gameField">game field</param>
         /// <returns>true if the current position is correct</returns>
+        /// </summary>
         public bool IsCorrect(TypeOfCell[,] gameField)
         {
             int deep = gameField.GetUpperBound(0) + 1;
@@ -55,11 +52,20 @@ namespace WinTetris
             return true;
         }
 
+        public void Fall(TypeOfCell[,] gameField)
+        {
+            int deep = gameField.GetUpperBound(0) + 1;
+            for (int index = 0; index < deep; index++)
+            {
+                MoveDown(gameField);
+            }
+        }
+
         /// <summary>
         /// Move figure down
-        /// </summary>
         /// <param name="gameField">game field</param>
-        /// <returns>true if figure was descendeed</returns>
+        /// <returns>true if figure was descended</returns>
+        /// </summary>
         public bool MoveDown(TypeOfCell[,] gameField)
         {
             for (int index = 0; index < Position.Length; index++)
@@ -83,8 +89,8 @@ namespace WinTetris
 
         /// <summary>
         /// rotate figure by 90 degree
-        /// </summary>
         /// <param name="gameField">game field</param>
+        /// </summary>
         public void Rotate(TypeOfCell[,] gameField)
         {
             //check for square
@@ -117,10 +123,10 @@ namespace WinTetris
 
         /// <summary>
         /// find new point for block of figure
-        /// </summary>
         /// <param name="centralPoint">point of central block</param>
         /// <param name="point">point of a current block</param>
         /// <returns>new point of the current block</returns>
+        /// </summary>
         private static Point FindNewShift(Point centralPoint, Point point)
         {
             //replace by rule: d_left => d_top; d_top => -d_left; rule from rotate by 90 deg
@@ -137,8 +143,8 @@ namespace WinTetris
 
         /// <summary>
         /// Move figure left
-        /// </summary>
         /// <param name="gameField">game field</param>
+        /// </summary>
         public void MoveLeft(TypeOfCell[,] gameField)
         {
             for (int index = 0; index < Position.Length; index++)
@@ -161,8 +167,8 @@ namespace WinTetris
 
         /// <summary>
         /// Move figure right
-        /// </summary>
         /// <param name="gameField">game field</param>
+        /// </summary>
         public void MoveRight(TypeOfCell[,] gameField)
         {
             for (int index = 0; index < Position.Length; index++)

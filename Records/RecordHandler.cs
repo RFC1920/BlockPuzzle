@@ -66,9 +66,11 @@ namespace WinTetris
             DialogResult result = form.ShowDialog();
 
             string name = result == DialogResult.OK ? form.textBox1.Text : String.Empty;
-            Player player = new Player();
-            player.Name = name;
-            player.Score = currentScore;
+            Player player = new Player
+            {
+                Name = name,
+                Score = currentScore
+            };
 
             //add player into database
             WorkWithRecords.AddPlayer(player);
