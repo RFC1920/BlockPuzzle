@@ -49,7 +49,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.nudSpeed = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.nudDeep = new System.Windows.Forms.NumericUpDown();
+            this.nudDepth = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.nudWidth = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,16 +63,16 @@
             this.tbpRecords.SuspendLayout();
             this.tbpSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSpeed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDeep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDepth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWidth)).BeginInit();
             this.tbpHelp.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                | System.Windows.Forms.AnchorStyles.Left)
+                | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tbpPlay);
             this.tabControl1.Controls.Add(this.tbpRecords);
             this.tabControl1.Controls.Add(this.tbpSettings);
@@ -128,7 +128,7 @@
             // lblRecord
             // 
             this.lblRecord.AutoSize = true;
-            this.lblRecord.Location = new System.Drawing.Point(786, 294);
+            this.lblRecord.Location = new System.Drawing.Point(865, 294);
             this.lblRecord.Name = "lblRecord";
             this.lblRecord.Size = new System.Drawing.Size(18, 20);
             this.lblRecord.TabIndex = 20;
@@ -171,7 +171,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(810, 294);
+            this.label8.Location = new System.Drawing.Point(761, 294);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 20);
             this.label8.TabIndex = 13;
@@ -207,7 +207,7 @@
             this.lblRecords.Name = "lblRecords";
             this.lblRecords.Size = new System.Drawing.Size(65, 22);
             this.lblRecords.TabIndex = 0;
-            this.lblRecords.Text = "gecnj";
+            this.lblRecords.Text = "empty";
             // 
             // tbpSettings
             // 
@@ -217,7 +217,7 @@
             this.tbpSettings.Controls.Add(this.label2);
             this.tbpSettings.Controls.Add(this.nudSpeed);
             this.tbpSettings.Controls.Add(this.label6);
-            this.tbpSettings.Controls.Add(this.nudDeep);
+            this.tbpSettings.Controls.Add(this.nudDepth);
             this.tbpSettings.Controls.Add(this.label4);
             this.tbpSettings.Controls.Add(this.nudWidth);
             this.tbpSettings.Controls.Add(this.label1);
@@ -261,7 +261,7 @@
             this.label3.Size = new System.Drawing.Size(408, 48);
             this.label3.TabIndex = 9;
             this.label3.Text = "    The depth of the playing field cannot be less than 10 cells\r\nand there can be" +
-    " no painmore than 28 cells (recommended value is \r\n 20 cells).";
+    " no more than 28 cells (recommended value is \r\n 20 cells).";
             // 
             // label2
             // 
@@ -272,30 +272,17 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(366, 48);
             this.label2.TabIndex = 8;
-            this.label2.Text = "    The width of the playing field cannot be less than 4 squares\r\nand cannot be m" +
-    "ore 22 cells (recommended value is \r\n 10 cells).";
+            this.label2.Text = "    The width of the playing field cannot be less than 4 squares\r\nand cannot be more than 22 cells (recommended value is \r\n 10 cells).";
             // 
             // nudSpeed
             // 
             this.nudSpeed.Location = new System.Drawing.Point(327, 242);
-            this.nudSpeed.Maximum = new decimal(new int[] {
-            600,
-            0,
-            0,
-            0});
-            this.nudSpeed.Minimum = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
+            this.nudSpeed.Maximum = new decimal(new int[] { 600, 0, 0, 0 });
+            this.nudSpeed.Minimum = new decimal(new int[] { 60, 0, 0, 0 });
             this.nudSpeed.Name = "nudSpeed";
             this.nudSpeed.Size = new System.Drawing.Size(120, 26);
             this.nudSpeed.TabIndex = 7;
-            this.nudSpeed.Value = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
+            this.nudSpeed.Value = new decimal(new int[] { 60, 0, 0, 0 });
             // 
             // label6
             // 
@@ -306,27 +293,15 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Falling speed";
             // 
-            // nudDeep
+            // nudDepth
             // 
-            this.nudDeep.Location = new System.Drawing.Point(327, 137);
-            this.nudDeep.Maximum = new decimal(new int[] {
-            28,
-            0,
-            0,
-            0});
-            this.nudDeep.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.nudDeep.Name = "nudDeep";
-            this.nudDeep.Size = new System.Drawing.Size(120, 26);
-            this.nudDeep.TabIndex = 4;
-            this.nudDeep.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
+            this.nudDepth.Location = new System.Drawing.Point(327, 137);
+            this.nudDepth.Maximum = new decimal(new int[] { 28, 0, 0, 0 });
+            this.nudDepth.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
+            this.nudDepth.Name = "nudDepth";
+            this.nudDepth.Size = new System.Drawing.Size(120, 26);
+            this.nudDepth.TabIndex = 4;
+            this.nudDepth.Value = new decimal(new int[] { 10, 0, 0, 0 });
             // 
             // label4
             // 
@@ -340,24 +315,12 @@
             // nudWidth
             // 
             this.nudWidth.Location = new System.Drawing.Point(327, 39);
-            this.nudWidth.Maximum = new decimal(new int[] {
-            22,
-            0,
-            0,
-            0});
-            this.nudWidth.Minimum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
+            this.nudWidth.Maximum = new decimal(new int[] { 22, 0, 0, 0 });
+            this.nudWidth.Minimum = new decimal(new int[] { 4, 0, 0, 0 });
             this.nudWidth.Name = "nudWidth";
             this.nudWidth.Size = new System.Drawing.Size(120, 26);
             this.nudWidth.TabIndex = 1;
-            this.nudWidth.Value = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
+            this.nudWidth.Value = new decimal(new int[] { 4, 0, 0, 0 });
             // 
             // label1
             // 
@@ -413,7 +376,7 @@
             this.tbpSettings.ResumeLayout(false);
             this.tbpSettings.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSpeed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDeep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDepth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWidth)).EndInit();
             this.tbpHelp.ResumeLayout(false);
             this.tbpHelp.PerformLayout();
@@ -432,7 +395,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown nudSpeed;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown nudDeep;
+        private System.Windows.Forms.NumericUpDown nudDepth;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown nudWidth;
         private System.Windows.Forms.Label label1;

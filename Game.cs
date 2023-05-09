@@ -23,18 +23,18 @@ namespace WinTetris
         public Figure CurrentFigure { get; private set; }
         public Figure NextFigure { get; private set; }
         public int Width { get; }
-        public int Deep { get; }
+        public int Depth { get; }
         public int Interval { get; }
 
         public Game()
         {
-            (int deep, int width, int speed) settings = WorkWithSettings.GetSettings();
+            (int depth, int width, int speed) = WorkWithSettings.GetSettings();
 
-            Deep = settings.deep;
-            Width = settings.width;
-            Interval = Convert.ToInt32(Math.Round(Constants.MilisecondsInAMinute / settings.speed));
+            Depth = depth;
+            Width = width;
+            Interval = Convert.ToInt32(Math.Round(Constants.MilisecondsInAMinute / speed));
 
-            GameField = new TypeOfCell[Deep, Width];
+            GameField = new TypeOfCell[Depth, Width];
             _startColumn = Convert.ToInt32(Math.Round((double)Width / 2) - 1);
         }
 
@@ -135,7 +135,7 @@ namespace WinTetris
             int[] filledRow = new int[4] { -1, -1, -1, -1 };
             int index = 0;
 
-            for (int row = Deep - 1; row > 0; row--)
+            for (int row = Depth - 1; row > 0; row--)
             {
                 bool isFilled = true;
                 bool isEmpty = true;

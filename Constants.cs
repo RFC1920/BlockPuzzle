@@ -6,7 +6,7 @@
         public const string PathOfSettingFile = "Settings.txt";
 
         //sefault settings 
-        public const int DefaultDeep = 20;
+        public const int DefaultDepth = 20;
         public const int DefaultWidth = 10;
         public const int DefaultSpeed = 150;
 

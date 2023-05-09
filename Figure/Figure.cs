@@ -36,14 +36,14 @@ namespace WinTetris
         /// </summary>
         public bool IsCorrect(TypeOfCell[,] gameField)
         {
-            int deep = gameField.GetUpperBound(0) + 1;
-            int width = gameField.Length / deep;
+            int depth = gameField.GetUpperBound(0) + 1;
+            int width = gameField.Length / depth;
 
             //check for mistake of value or shape
             foreach (Point point in Position)
             {
                 if ((point.X >= width) || (point.X < 0) ||
-                    (point.Y >= deep) || gameField[point.Y, point.X] < TypeOfCell.Static)
+                    (point.Y >= depth) || gameField[point.Y, point.X] < TypeOfCell.Static)
                 {
                     return false;
                 }
@@ -52,10 +52,15 @@ namespace WinTetris
             return true;
         }
 
+        /// <summary>
+        /// Move figure to the bottom of the available space
+        /// <param name="gameField">game field</param>
+        /// <returns>void</returns>
+        /// </summary>
         public void Fall(TypeOfCell[,] gameField)
         {
-            int deep = gameField.GetUpperBound(0) + 1;
-            for (int index = 0; index < deep; index++)
+            int depth = gameField.GetUpperBound(0) + 1;
+            for (int index = 0; index < depth; index++)
             {
                 MoveDown(gameField);
             }

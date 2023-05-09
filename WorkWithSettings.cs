@@ -7,15 +7,15 @@ namespace WinTetris
     {
         /// <summary>
         /// Save setting in file
-        /// <param name="deep">deep for save</param>
+        /// <param name="depth">depth for save</param>
         /// <param name="width">width for save </param>
         /// <param name="speed">speed for save</param>
         /// </summary>
-        public static void SaveSettings(int deep, int width, int speed)
+        public static void SaveSettings(int depth, int width, int speed)
         {
             CreateFileIfItIsNotExist();
 
-            WriteData(deep, width, speed);
+            WriteData(depth, width, speed);
         }
 
         /// <summary>
@@ -31,15 +31,15 @@ namespace WinTetris
 
         /// <summary>
         /// Write data in file
-        /// <param name="deepForWrite">deep for write in file</param>
+        /// <param name="depthForWrite">depth for write in file</param>
         /// <param name="widthForWrite">width for write in file</param>
         /// <param name="speedForWrite">speed for write in file</param>
         /// </summary>
-        private static void WriteData(int deep, int width, int speed)
+        private static void WriteData(int depth, int width, int speed)
         {
             using (StreamWriter sw = new StreamWriter(Constants.PathOfSettingFile))
             {
-                sw.WriteLine(deep);
+                sw.WriteLine(depth);
                 sw.WriteLine(width);
                 sw.WriteLine(speed);
             }
@@ -49,7 +49,7 @@ namespace WinTetris
         /// get saved settings or default
         /// <returns>settings</returns>
         /// </summary>
-        public static (int deep, int width, int speed) GetSettings()
+        public static (int depth, int width, int speed) GetSettings()
         {
             if (!File.Exists(Constants.PathOfSettingFile))
             {
@@ -66,30 +66,30 @@ namespace WinTetris
         /// Read data from file
         /// <returns>read data converted to integer</returns>
         /// </summary>
-        private static (int deep, int width, int speed) ReadData()
+        private static (int depth, int width, int speed) ReadData()
         {
-            int deep;
+            int depth;
             int width;
             int speed;
 
             using (StreamReader sr = new StreamReader(Constants.PathOfSettingFile))
             {
-                deep = Convert.ToInt32(sr.ReadLine());
+                depth = Convert.ToInt32(sr.ReadLine());
                 width = Convert.ToInt32(sr.ReadLine());
                 speed = Convert.ToInt32(sr.ReadLine());
             }
 
-            return (deep, width, speed);
+            return (depth, width, speed);
         }
 
         /// <summary>
         /// set default setting and save it in file
         /// <returns></returns>
         /// </summary>
-        private static (int deep, int width, int speed) SetDefaultSetting()
+        private static (int depth, int width, int speed) SetDefaultSetting()
         {
-            SaveSettings(Constants.DefaultDeep, Constants.DefaultWidth, Constants.DefaultSpeed);
-            return (Constants.DefaultDeep, Constants.DefaultWidth, Constants.DefaultSpeed);
+            SaveSettings(Constants.DefaultDepth, Constants.DefaultWidth, Constants.DefaultSpeed);
+            return (Constants.DefaultDepth, Constants.DefaultWidth, Constants.DefaultSpeed);
         }
     }
 }

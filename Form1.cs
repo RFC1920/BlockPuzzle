@@ -37,9 +37,9 @@ namespace WinTetris
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
             // Work with settings
-            (int deep, int width, int speed) settings = WorkWithSettings.GetSettings();
+            (int depth, int width, int speed) settings = WorkWithSettings.GetSettings();
 
-            nudDeep.Value = settings.deep;
+            nudDepth.Value = settings.depth;
             nudWidth.Value = settings.width;
             nudSpeed.Value = settings.speed;
 
@@ -50,11 +50,11 @@ namespace WinTetris
 
         private void btnEditSettings_Click(object sender, EventArgs e)
         {
-            int deep = Convert.ToInt32(nudDeep.Value);
+            int depth = Convert.ToInt32(nudDepth.Value);
             int width = Convert.ToInt32(nudWidth.Value);
             int speed = Convert.ToInt32(nudSpeed.Value);
 
-            WorkWithSettings.SaveSettings(deep, width, speed);
+            WorkWithSettings.SaveSettings(depth, width, speed);
         }
         #endregion 
 
@@ -104,7 +104,7 @@ namespace WinTetris
             _game = new Game();
 
             // General settings
-            _bitField = new Bitmap(Constants.SizeInPixels * _game.Width + 1, Constants.SizeInPixels * _game.Deep + 1);
+            _bitField = new Bitmap(Constants.SizeInPixels * _game.Width + 1, Constants.SizeInPixels * _game.Depth + 1);
             _bitFigure = new Bitmap(Constants.SizeInPixels * 3 + 1, Constants.SizeInPixels * 4 + 1);
             _graphicsForField = Graphics.FromImage(_bitField);
             _graphicsForFigure = Graphics.FromImage(_bitFigure);
@@ -162,7 +162,7 @@ namespace WinTetris
             Pen pensBackColor = Pens.Black;
 
             // Draw game field
-            for (int i = 0; i < _game.Deep; i++)
+            for (int i = 0; i < _game.Depth; i++)
             {
                 for (int j = 0; j < _game.Width; j++)
                 {
