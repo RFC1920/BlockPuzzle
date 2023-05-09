@@ -10,8 +10,6 @@ namespace WinTetris
     {
         private Game _game;
 
-        //bool spaceIsPressed;
-
         private Bitmap _bitField;
         private Bitmap _bitFigure;
         private Graphics _graphicsForField;
@@ -23,7 +21,7 @@ namespace WinTetris
         {
             InitializeComponent();
 
-            //for fast next connections
+            // For fast next connections
             FirstConnectionToDataBase();
         }
 
@@ -38,14 +36,14 @@ namespace WinTetris
         #region Settings and records
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
-            //work with settings
+            // Work with settings
             (int deep, int width, int speed) settings = WorkWithSettings.GetSettings();
 
             nudDeep.Value = settings.deep;
             nudWidth.Value = settings.width;
             nudSpeed.Value = settings.speed;
 
-            //work with records
+            // Work with records
             List<Player> players = WorkWithRecords.GetPlayers();
             lblRecords.Text = RecordHandler.GetRecords(players);
         }
@@ -76,7 +74,7 @@ namespace WinTetris
 
         private void StopGame()
         {
-            //stop game and 
+            // Stop game and 
             timer.Stop();
             KeyDown -= Form1_KeyDown;
             btnChangeGameStatus.Text = Constants.StatusGamePlay;
@@ -86,10 +84,10 @@ namespace WinTetris
             System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.notify);
             player.Play();
 
-            // create new score and 
+            // Create new score and 
             AddNewRecordIfNeccessary();
 
-            // reset images
+            // Reset images
             pctGameField.Image = null;
             pctNext.Image = null;
         }
@@ -105,7 +103,7 @@ namespace WinTetris
         {
             _game = new Game();
 
-            //general settings
+            // General settings
             _bitField = new Bitmap(Constants.SizeInPixels * _game.Width + 1, Constants.SizeInPixels * _game.Deep + 1);
             _bitFigure = new Bitmap(Constants.SizeInPixels * 3 + 1, Constants.SizeInPixels * 4 + 1);
             _graphicsForField = Graphics.FromImage(_bitField);
@@ -141,9 +139,9 @@ namespace WinTetris
         public void ShowNextFigure()
         {
             _graphicsForFigure.Clear(_backColorForFigure);
-            int size = Constants.SizeInPixels;
+            const int size = Constants.SizeInPixels;
 
-            //draw next figure
+            // Draw next figure
             Point[] figure = _game.NextFigure.Configuration;
             Brush color = _game.NextFigure.Color;
 
@@ -153,7 +151,7 @@ namespace WinTetris
                 _graphicsForFigure.DrawRectangle(Pens.White, figure[i].X * size, figure[i].Y * size, size, size);
             }
 
-            //show result
+            // Show result
             pctNext.Image = _bitFigure;
         }
 
@@ -163,7 +161,7 @@ namespace WinTetris
             const int size = Constants.SizeInPixels;
             Pen pensBackColor = Pens.Black;
 
-            //draw game field
+            // Draw game field
             for (int i = 0; i < _game.Deep; i++)
             {
                 for (int j = 0; j < _game.Width; j++)
@@ -192,6 +190,7 @@ namespace WinTetris
             pctGameField.Image = _bitField;
         }
 
+        // Handle normal keys (WASD)
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.W)
@@ -210,17 +209,9 @@ namespace WinTetris
             {
                 _game.CurrentFigure.MoveRight(_game.GameField);
             }
-            //else if (e.KeyCode == Keys.Space)
-            //{
-            //    _game.MoveFigureDown(_game.GameField);
-            //}
-            //else if (e.KeyCode == Keys.Escape)
-            //{
-            //    btnChangeGameStatus.PerformClick();
-            //}
         }
 
-        // Handle arrow keys (command keys)
+        // Handle command keys (arrows, space bar, escape)
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (_game == null) return false;
@@ -253,28 +244,6 @@ namespace WinTetris
             }
             return true;
         }
-
-        //public void CheckKey()
-        //{
-        //    try
-        //    {
-        //        while (true)
-        //        {
-        //            if ((GetAsyncKeyState(32) & 0x8000) > 0)
-        //            {
-        //                spaceIsPressed = true;
-        //                _game.MoveFigureDown(_game.GameField, true);
-        //            }
-        //            else
-        //            {
-        //                if (spaceIsPressed)
-        //                    spaceIsPressed = false;
-        //            }
-        //            Thread.Sleep(200);
-        //        }
-        //    }
-        //    catch (ThreadInterruptedException ex) { }
-        //}
 
         private void timer_Tick(object sender, EventArgs e) => _game?.MoveFigureDown(_game.GameField);
 
