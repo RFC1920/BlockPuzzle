@@ -3738,7 +3738,13 @@
   <data name="notify" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\notify.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="whoosh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\whoosh.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Windows_Recycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Windows Recycle.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="woodblock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\woodblock.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

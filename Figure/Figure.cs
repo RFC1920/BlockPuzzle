@@ -123,6 +123,8 @@ namespace WinTetris
             else
             {
                 ChangeFigurePosition.Invoke();
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.whoosh);
+                player.Play();
             }
         }
 
@@ -167,6 +169,8 @@ namespace WinTetris
             else
             {
                 ChangeFigurePosition.Invoke();
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.woodblock);
+                player.Play();
             }
         }
 
@@ -191,6 +195,8 @@ namespace WinTetris
             else
             {
                 ChangeFigurePosition.Invoke();
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.woodblock);
+                player.Play();
             }
         }
     }

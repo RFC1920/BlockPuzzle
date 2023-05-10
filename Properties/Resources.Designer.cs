@@ -90,9 +90,27 @@ namespace WinTetris.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream whoosh {
+            get {
+                return ResourceManager.GetStream("whoosh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream Windows_Recycle {
             get {
                 return ResourceManager.GetStream("Windows_Recycle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream woodblock {
+            get {
+                return ResourceManager.GetStream("woodblock", resourceCulture);
             }
         }
     }
