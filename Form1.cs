@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -99,13 +100,32 @@ namespace WinTetris
             timer.Start();
         }
 
+        private void PaintGrid()
+        {
+            const int cellSize = Constants.SizeInPixels;
+            Pen p = new Pen(Color.DarkGray, 1);
+
+            // Left to right grid
+            for (int y = 0; y < _game.Depth; ++y)
+            {
+                _graphicsForField.DrawLine(p, 0, y * cellSize, _game.Depth * cellSize, y * cellSize);
+            }
+
+            // Top to bottom grid
+            for (int x = 0; x < _game.Width; ++x)
+            {
+                _graphicsForField.DrawLine(p, x * cellSize, 0, x * cellSize, _game.Depth * cellSize);
+            }
+        }
+
         private void StartGame()
         {
             _game = new Game();
 
             // General settings
-            _bitField = new Bitmap(Constants.SizeInPixels * _game.Width + 1, Constants.SizeInPixels * _game.Depth + 1);
-            _bitFigure = new Bitmap(Constants.SizeInPixels * 3 + 1, Constants.SizeInPixels * 4 + 1);
+            _bitField = new Bitmap((Constants.SizeInPixels * _game.Width) + 1, (Constants.SizeInPixels * _game.Depth) + 1);
+            _bitFigure = new Bitmap((Constants.SizeInPixels * 3) + 1, (Constants.SizeInPixels * 4) + 1);
+
             _graphicsForField = Graphics.FromImage(_bitField);
             _graphicsForFigure = Graphics.FromImage(_bitFigure);
 
@@ -186,6 +206,7 @@ namespace WinTetris
                 _graphicsForField.DrawRectangle(pensBackColor, figure[i].X * size, figure[i].Y * size, size, size);
             }
 
+            PaintGrid();
             //show result
             pctGameField.Image = _bitField;
         }

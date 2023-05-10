@@ -9,8 +9,8 @@
 
         /// <summary>
         /// Освободить все используемые ресурсы.
-        /// </summary>
         /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        /// </summary>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -414,4 +414,3 @@
         private System.Windows.Forms.Button btnStop;
     }
 }
-
