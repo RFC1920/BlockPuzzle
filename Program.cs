@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace WinTetris
+namespace BlockPuzzle
 {
     static class Program
     {

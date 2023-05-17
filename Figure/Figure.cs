@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Drawing;
 
-namespace WinTetris
+namespace BlockPuzzle
 {
     public abstract class Figure
     {

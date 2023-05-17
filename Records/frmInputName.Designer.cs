@@ -1,4 +1,4 @@
-﻿namespace WinTetris.Records
+﻿namespace BlockPuzzle.Records
 {
     partial class frmInputName
     {

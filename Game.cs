@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading;
 
-namespace WinTetris
+namespace BlockPuzzle
 {
     public class Game
     {
@@ -122,7 +122,7 @@ namespace WinTetris
         private void AddScoreAndLines(int countOfFilledRow)
         {
             _lines += countOfFilledRow;
-            _score += countOfFilledRow == 4 ? Constants.PointsForTetris : countOfFilledRow * Constants.PointsForARow;
+            _score += countOfFilledRow == 4 ? Constants.PointsForBigWin : countOfFilledRow * Constants.PointsForARow;
             ChangedScoreAndLines.Invoke(_score, _lines);
         }
 

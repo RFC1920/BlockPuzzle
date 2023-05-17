@@ -1,4 +1,4 @@
-﻿namespace WinTetris
+﻿namespace BlockPuzzle
 {
     public struct Point
     {

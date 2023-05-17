@@ -1,4 +1,4 @@
-﻿namespace WinTetris
+﻿namespace BlockPuzzle
 {
     public static class Constants
     {
@@ -34,7 +34,7 @@
 
         // to increase score
         public const int PointsForARow = 10;
-        public const int PointsForTetris = 100;
+        public const int PointsForBigWin = 100;
 
         // to generate figures
         public const int GeneratedValueForS = 1;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace WinTetris.Records
+namespace BlockPuzzle.Records
 {
     public partial class frmInputName : Form
     {

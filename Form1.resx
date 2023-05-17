@@ -130,8 +130,7 @@ Here are the recommended difficulty levels:
     <value>During the game, 7 different figures will appear, each
 of which occupies 4 cells. Shapes will appear in the middle, and your goal is to fill the ranks. After filling them
 the figure will disappear and give you points, 10 per row. After
-filling 4 rows at the same time you collect "Tetris",
-which brings extra points. During the game,
+filling 4 rows at the same time you collect extra points. During the game,
 the falling speed of the figures will not change.
 
 Figures can be moved using the buttons on the keyboard. Right - D,

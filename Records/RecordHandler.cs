@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using WinTetris.Records;
+using BlockPuzzle.Records;
 
-namespace WinTetris
+namespace BlockPuzzle
 {
     public static class RecordHandler
     {

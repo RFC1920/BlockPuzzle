@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace WinTetris
+namespace BlockPuzzle
 {
     public partial class Form1 : Form
     {

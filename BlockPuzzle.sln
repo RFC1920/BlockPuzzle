@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinTetris", "WinTetris.csproj", "{22331FB3-F2BF-42EC-986A-02F8BB4A5B56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockPuzzle", "BlockPuzzle.csproj", "{22331FB3-F2BF-42EC-986A-02F8BB4A5B56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

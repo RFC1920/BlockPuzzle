@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace WinTetris
+namespace BlockPuzzle
 {
     public class FigureL : Figure
     {

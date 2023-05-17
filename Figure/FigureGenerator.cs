@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WinTetris
+namespace BlockPuzzle
 {
     public static class FigureGenerator
     {

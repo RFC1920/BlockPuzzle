@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace WinTetris
+namespace BlockPuzzle
 {
     public class Player : INotifyPropertyChanged
     {

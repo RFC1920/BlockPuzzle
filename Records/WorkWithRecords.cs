@@ -2,7 +2,7 @@
 using System.Data.Entity;
 using System.Linq;
 
-namespace WinTetris
+namespace BlockPuzzle
 {
     public static class WorkWithRecords
     {

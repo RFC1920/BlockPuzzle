@@ -1,4 +1,4 @@
-﻿namespace WinTetris
+﻿namespace BlockPuzzle
 {
     partial class Form1
     {
@@ -364,7 +364,7 @@
             this.KeyPreview = true;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tetris";
+            this.Text = "BlockPuzzle";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tbpPlay.ResumeLayout(false);

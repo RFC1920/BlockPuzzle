@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 
-namespace WinTetris
+namespace BlockPuzzle
 {
     public class PlayersContext : DbContext
     {

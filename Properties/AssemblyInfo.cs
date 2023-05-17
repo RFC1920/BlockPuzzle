@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
-[assembly: AssemblyTitle("WinTetris")]
+[assembly: AssemblyTitle("BlockPuzzle")]
 [assembly: AssemblyDescription("Classic block puzzle game in C#")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Remod")]
-[assembly: AssemblyProduct("WinTetris")]
+[assembly: AssemblyProduct("BlockPuzzle")]
 [assembly: AssemblyCopyright("Copyright © 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
