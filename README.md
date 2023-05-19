@@ -1,4 +1,4 @@
-# BlockPuzzle
+# BlockPuzzle for Windows
 BlockPuzzle forked from https://sourceforge.net/projects/wintetris/
 
 This was forked from a very old repo on another provider.
