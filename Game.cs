@@ -25,14 +25,16 @@ namespace BlockPuzzle
         public int Width { get; }
         public int Depth { get; }
         public int Interval { get; }
+        public  bool Confirm { get; }
 
         public Game()
         {
-            (int depth, int width, int speed) = WorkWithSettings.GetSettings();
+            (int depth, int width, int speed, bool confirm) = WorkWithSettings.GetSettings();
 
             Depth = depth;
             Width = width;
             Interval = Convert.ToInt32(Math.Round(Constants.MilisecondsInAMinute / speed));
+            Confirm = confirm;
 
             GameField = new TypeOfCell[Depth, Width];
             _startColumn = Convert.ToInt32(Math.Round((double)Width / 2) - 1);

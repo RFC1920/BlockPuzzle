@@ -11,11 +11,11 @@ namespace BlockPuzzle
         /// <param name="width">width for save </param>
         /// <param name="speed">speed for save</param>
         /// </summary>
-        public static void SaveSettings(int depth, int width, int speed)
+        public static void SaveSettings(int depth, int width, int speed, bool confirmExit)
         {
             CreateFileIfItIsNotExist();
 
-            WriteData(depth, width, speed);
+            WriteData(depth, width, speed, confirmExit);
         }
 
         /// <summary>
@@ -35,13 +35,14 @@ namespace BlockPuzzle
         /// <param name="widthForWrite">width for write in file</param>
         /// <param name="speedForWrite">speed for write in file</param>
         /// </summary>
-        private static void WriteData(int depth, int width, int speed)
+        private static void WriteData(int depth, int width, int speed, bool confirmExit)
         {
             using (StreamWriter sw = new StreamWriter(Constants.PathOfSettingFile))
             {
                 sw.WriteLine(depth);
                 sw.WriteLine(width);
                 sw.WriteLine(speed);
+                sw.WriteLine(confirmExit);
             }
         }
 
@@ -49,7 +50,7 @@ namespace BlockPuzzle
         /// get saved settings or default
         /// <returns>settings</returns>
         /// </summary>
-        public static (int depth, int width, int speed) GetSettings()
+        public static (int depth, int width, int speed, bool confirmExit) GetSettings()
         {
             if (!File.Exists(Constants.PathOfSettingFile))
             {
@@ -66,30 +67,32 @@ namespace BlockPuzzle
         /// Read data from file
         /// <returns>read data converted to integer</returns>
         /// </summary>
-        private static (int depth, int width, int speed) ReadData()
+        private static (int depth, int width, int speed, bool confirmExit) ReadData()
         {
             int depth;
             int width;
             int speed;
+            bool confirmExit;
 
             using (StreamReader sr = new StreamReader(Constants.PathOfSettingFile))
             {
                 depth = Convert.ToInt32(sr.ReadLine());
                 width = Convert.ToInt32(sr.ReadLine());
                 speed = Convert.ToInt32(sr.ReadLine());
+                confirmExit = Convert.ToBoolean(sr.ReadLine());
             }
 
-            return (depth, width, speed);
+            return (depth, width, speed, confirmExit);
         }
 
         /// <summary>
         /// set default setting and save it in file
         /// <returns></returns>
         /// </summary>
-        private static (int depth, int width, int speed) SetDefaultSetting()
+        private static (int depth, int width, int speed, bool confirmExit) SetDefaultSetting()
         {
-            SaveSettings(Constants.DefaultDepth, Constants.DefaultWidth, Constants.DefaultSpeed);
-            return (Constants.DefaultDepth, Constants.DefaultWidth, Constants.DefaultSpeed);
+            SaveSettings(Constants.DefaultDepth, Constants.DefaultWidth, Constants.DefaultSpeed, Constants.ConfirmExit);
+            return (Constants.DefaultDepth, Constants.DefaultWidth, Constants.DefaultSpeed, Constants.ConfirmExit);
         }
     }
 }

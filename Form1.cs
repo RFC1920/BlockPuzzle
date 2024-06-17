@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -38,11 +37,12 @@ namespace BlockPuzzle
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
             // Work with settings
-            (int depth, int width, int speed) settings = WorkWithSettings.GetSettings();
+            (int depth, int width, int speed, bool confirm) settings = WorkWithSettings.GetSettings();
 
             nudDepth.Value = settings.depth;
             nudWidth.Value = settings.width;
             nudSpeed.Value = settings.speed;
+            nudConfirm.Checked = settings.confirm;
 
             // Work with records
             List<Player> players = WorkWithRecords.GetPlayers();
@@ -54,8 +54,9 @@ namespace BlockPuzzle
             int depth = Convert.ToInt32(nudDepth.Value);
             int width = Convert.ToInt32(nudWidth.Value);
             int speed = Convert.ToInt32(nudSpeed.Value);
+            bool confirmExit = Convert.ToBoolean(nudConfirm.Checked);
 
-            WorkWithSettings.SaveSettings(depth, width, speed);
+            WorkWithSettings.SaveSettings(depth, width, speed, confirmExit);
         }
         #endregion 
 
@@ -273,11 +274,11 @@ namespace BlockPuzzle
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show(Constants.ExitGameText, Constants.ExitGameCaption, MessageBoxButtons.YesNo);
-            if (result != DialogResult.Yes)
-            {
-                e.Cancel = true;
-            }
+            //DialogResult result = MessageBox.Show(Constants.ExitGameText, Constants.ExitGameCaption, MessageBoxButtons.YesNo);
+            //if (result != DialogResult.Yes)
+            //{
+            //    e.Cancel = true;
+            //}
         }
     }
 }

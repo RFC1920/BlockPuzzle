@@ -53,8 +53,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.nudWidth = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.nudConfirm = new System.Windows.Forms.CheckBox();
             this.tbpHelp = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tbpPlay.SuspendLayout();
@@ -70,9 +72,9 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                | System.Windows.Forms.AnchorStyles.Left)
-                | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tbpPlay);
             this.tabControl1.Controls.Add(this.tbpRecords);
             this.tabControl1.Controls.Add(this.tbpSettings);
@@ -221,6 +223,7 @@
             this.tbpSettings.Controls.Add(this.label4);
             this.tbpSettings.Controls.Add(this.nudWidth);
             this.tbpSettings.Controls.Add(this.label1);
+            this.tbpSettings.Controls.Add(this.nudConfirm);
             this.tbpSettings.Location = new System.Drawing.Point(4, 29);
             this.tbpSettings.Name = "tbpSettings";
             this.tbpSettings.Padding = new System.Windows.Forms.Padding(3);
@@ -232,7 +235,7 @@
             // btnEditSettings
             // 
             this.btnEditSettings.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEditSettings.Location = new System.Drawing.Point(342, 381);
+            this.btnEditSettings.Location = new System.Drawing.Point(354, 508);
             this.btnEditSettings.Name = "btnEditSettings";
             this.btnEditSettings.Size = new System.Drawing.Size(93, 37);
             this.btnEditSettings.TabIndex = 11;
@@ -258,7 +261,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label3.Location = new System.Drawing.Point(43, 166);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(408, 48);
+            this.label3.Size = new System.Drawing.Size(382, 48);
             this.label3.TabIndex = 9;
             this.label3.Text = "    The depth of the playing field cannot be less than 10 cells\r\nand there can be" +
     " no more than 28 cells (recommended value is \r\n 20 cells).";
@@ -272,17 +275,30 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(366, 48);
             this.label2.TabIndex = 8;
-            this.label2.Text = "    The width of the playing field cannot be less than 4 squares\r\nand cannot be more than 22 cells (recommended value is \r\n 10 cells).";
+            this.label2.Text = "    The width of the playing field cannot be less than 4 squares\r\nand cannot be m" +
+    "ore than 22 cells (recommended value is \r\n 10 cells).";
             // 
             // nudSpeed
             // 
             this.nudSpeed.Location = new System.Drawing.Point(327, 242);
-            this.nudSpeed.Maximum = new decimal(new int[] { 600, 0, 0, 0 });
-            this.nudSpeed.Minimum = new decimal(new int[] { 60, 0, 0, 0 });
+            this.nudSpeed.Maximum = new decimal(new int[] {
+            600,
+            0,
+            0,
+            0});
+            this.nudSpeed.Minimum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.nudSpeed.Name = "nudSpeed";
             this.nudSpeed.Size = new System.Drawing.Size(120, 26);
             this.nudSpeed.TabIndex = 7;
-            this.nudSpeed.Value = new decimal(new int[] { 60, 0, 0, 0 });
+            this.nudSpeed.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             // 
             // label6
             // 
@@ -296,12 +312,24 @@
             // nudDepth
             // 
             this.nudDepth.Location = new System.Drawing.Point(327, 137);
-            this.nudDepth.Maximum = new decimal(new int[] { 28, 0, 0, 0 });
-            this.nudDepth.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
+            this.nudDepth.Maximum = new decimal(new int[] {
+            28,
+            0,
+            0,
+            0});
+            this.nudDepth.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.nudDepth.Name = "nudDepth";
             this.nudDepth.Size = new System.Drawing.Size(120, 26);
             this.nudDepth.TabIndex = 4;
-            this.nudDepth.Value = new decimal(new int[] { 10, 0, 0, 0 });
+            this.nudDepth.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // label4
             // 
@@ -315,12 +343,24 @@
             // nudWidth
             // 
             this.nudWidth.Location = new System.Drawing.Point(327, 39);
-            this.nudWidth.Maximum = new decimal(new int[] { 22, 0, 0, 0 });
-            this.nudWidth.Minimum = new decimal(new int[] { 4, 0, 0, 0 });
+            this.nudWidth.Maximum = new decimal(new int[] {
+            22,
+            0,
+            0,
+            0});
+            this.nudWidth.Minimum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
             this.nudWidth.Name = "nudWidth";
             this.nudWidth.Size = new System.Drawing.Size(120, 26);
             this.nudWidth.TabIndex = 1;
-            this.nudWidth.Value = new decimal(new int[] { 4, 0, 0, 0 });
+            this.nudWidth.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
             // 
             // label1
             // 
@@ -330,6 +370,15 @@
             this.label1.Size = new System.Drawing.Size(133, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Playing field width";
+            // 
+            // nudConfirm
+            // 
+            this.nudConfirm.Checked = true;
+            this.nudConfirm.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.nudConfirm.Location = new System.Drawing.Point(327, 242);
+            this.nudConfirm.Name = "nudConfirm";
+            this.nudConfirm.Size = new System.Drawing.Size(120, 26);
+            this.nudConfirm.TabIndex = 7;
             // 
             // tbpHelp
             // 
@@ -346,9 +395,18 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(3, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(762, 520);
+            this.label7.Size = new System.Drawing.Size(762, 500);
             this.label7.TabIndex = 0;
             this.label7.Text = resources.GetString("label7.Text");
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(42, 274);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(103, 20);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Confirm exit";
             // 
             // timer
             // 
@@ -395,6 +453,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown nudSpeed;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.CheckBox nudConfirm;
         private System.Windows.Forms.NumericUpDown nudDepth;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown nudWidth;

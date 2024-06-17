@@ -9,6 +9,7 @@
         public const int DefaultDepth = 20;
         public const int DefaultWidth = 10;
         public const int DefaultSpeed = 150;
+        public const bool ConfirmExit = true;
 
         //size of rectangle
         //public const int SizeInPixels = 15;
