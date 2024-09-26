@@ -25,16 +25,19 @@ namespace BlockPuzzle
         public int Width { get; }
         public int Depth { get; }
         public int Interval { get; }
-        public  bool Confirm { get; }
+        public bool Confirm { get; }
+
+        public bool DisableSound { get; }
 
         public Game()
         {
-            (int depth, int width, int speed, bool confirm) = WorkWithSettings.GetSettings();
+            (int depth, int width, int speed, bool confirm, bool disableSound) = WorkWithSettings.GetSettings();
 
             Depth = depth;
             Width = width;
             Interval = Convert.ToInt32(Math.Round(Constants.MilisecondsInAMinute / speed));
             Confirm = confirm;
+            DisableSound = disableSound;
 
             GameField = new TypeOfCell[Depth, Width];
             _startColumn = Convert.ToInt32(Math.Round((double)Width / 2) - 1);
@@ -110,8 +113,11 @@ namespace BlockPuzzle
             {
                 return;
             }
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.chimes);
-            player.Play();
+            if (DisableSound != true)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.chimes);
+                player.Play();
+            }
 
             RefreshGameFieldAfterFilledRows(filledRows, countOfFilledRow);
             AddScoreAndLines(countOfFilledRow);

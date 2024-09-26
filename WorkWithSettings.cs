@@ -10,12 +10,14 @@ namespace BlockPuzzle
         /// <param name="depth">depth for save</param>
         /// <param name="width">width for save </param>
         /// <param name="speed">speed for save</param>
+        /// <param name="confirmExit">sound for save</param>
+        /// <param name="sound">sound for save</param>
         /// </summary>
-        public static void SaveSettings(int depth, int width, int speed, bool confirmExit)
+        public static void SaveSettings(int depth, int width, int speed, bool confirmExit, bool disableSound)
         {
             CreateFileIfItIsNotExist();
 
-            WriteData(depth, width, speed, confirmExit);
+            WriteData(depth, width, speed, confirmExit, disableSound);
         }
 
         /// <summary>
@@ -35,7 +37,7 @@ namespace BlockPuzzle
         /// <param name="widthForWrite">width for write in file</param>
         /// <param name="speedForWrite">speed for write in file</param>
         /// </summary>
-        private static void WriteData(int depth, int width, int speed, bool confirmExit)
+        private static void WriteData(int depth, int width, int speed, bool confirmExit, bool disableSound)
         {
             using (StreamWriter sw = new StreamWriter(Constants.PathOfSettingFile))
             {
@@ -43,6 +45,7 @@ namespace BlockPuzzle
                 sw.WriteLine(width);
                 sw.WriteLine(speed);
                 sw.WriteLine(confirmExit);
+                sw.WriteLine(disableSound);
             }
         }
 
@@ -50,7 +53,7 @@ namespace BlockPuzzle
         /// get saved settings or default
         /// <returns>settings</returns>
         /// </summary>
-        public static (int depth, int width, int speed, bool confirmExit) GetSettings()
+        public static (int depth, int width, int speed, bool confirmExit, bool disableSound) GetSettings()
         {
             if (!File.Exists(Constants.PathOfSettingFile))
             {
@@ -67,12 +70,13 @@ namespace BlockPuzzle
         /// Read data from file
         /// <returns>read data converted to integer</returns>
         /// </summary>
-        private static (int depth, int width, int speed, bool confirmExit) ReadData()
+        private static (int depth, int width, int speed, bool confirmExit, bool disableSound) ReadData()
         {
             int depth;
             int width;
             int speed;
             bool confirmExit;
+            bool disableSound;
 
             using (StreamReader sr = new StreamReader(Constants.PathOfSettingFile))
             {
@@ -80,19 +84,20 @@ namespace BlockPuzzle
                 width = Convert.ToInt32(sr.ReadLine());
                 speed = Convert.ToInt32(sr.ReadLine());
                 confirmExit = Convert.ToBoolean(sr.ReadLine());
+                disableSound = Convert.ToBoolean(sr.ReadLine());
             }
 
-            return (depth, width, speed, confirmExit);
+            return (depth, width, speed, confirmExit, disableSound);
         }
 
         /// <summary>
         /// set default setting and save it in file
         /// <returns></returns>
         /// </summary>
-        private static (int depth, int width, int speed, bool confirmExit) SetDefaultSetting()
+        private static (int depth, int width, int speed, bool confirmExit, bool disableSound) SetDefaultSetting()
         {
-            SaveSettings(Constants.DefaultDepth, Constants.DefaultWidth, Constants.DefaultSpeed, Constants.ConfirmExit);
-            return (Constants.DefaultDepth, Constants.DefaultWidth, Constants.DefaultSpeed, Constants.ConfirmExit);
+            SaveSettings(Constants.DefaultDepth, Constants.DefaultWidth, Constants.DefaultSpeed, Constants.ConfirmExit, Constants.DisableSound);
+            return (Constants.DefaultDepth, Constants.DefaultWidth, Constants.DefaultSpeed, Constants.ConfirmExit, Constants.DisableSound);
         }
     }
 }

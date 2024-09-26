@@ -37,12 +37,13 @@ namespace BlockPuzzle
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
             // Work with settings
-            (int depth, int width, int speed, bool confirm) settings = WorkWithSettings.GetSettings();
+            (int depth, int width, int speed, bool confirm, bool disableSound) settings = WorkWithSettings.GetSettings();
 
             nudDepth.Value = settings.depth;
             nudWidth.Value = settings.width;
             nudSpeed.Value = settings.speed;
             nudConfirm.Checked = settings.confirm;
+            nudDisableSound.Checked = settings.disableSound;
 
             // Work with records
             List<Player> players = WorkWithRecords.GetPlayers();
@@ -55,8 +56,9 @@ namespace BlockPuzzle
             int width = Convert.ToInt32(nudWidth.Value);
             int speed = Convert.ToInt32(nudSpeed.Value);
             bool confirmExit = Convert.ToBoolean(nudConfirm.Checked);
+            bool disableSound = Convert.ToBoolean(nudDisableSound.Checked);
 
-            WorkWithSettings.SaveSettings(depth, width, speed, confirmExit);
+            WorkWithSettings.SaveSettings(depth, width, speed, confirmExit, disableSound);
         }
         #endregion 
 
@@ -83,8 +85,11 @@ namespace BlockPuzzle
             btnStop.Enabled = false;
 
             // Play end game sound
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.notify);
-            player.Play();
+            if (!nudDisableSound.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.notify);
+                player.Play();
+            }
 
             // Create new score and 
             AddNewRecordIfNeccessary();
@@ -260,9 +265,11 @@ namespace BlockPuzzle
             else if (keyData == Keys.Space)
             {
                 _game.CurrentFigure.Fall(_game.GameField);
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.histicks);
-                player.Play();
-
+                if (!nudDisableSound.Checked)
+                {
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.histicks);
+                    player.Play();
+                }
             }
             return true;
         }
@@ -274,11 +281,16 @@ namespace BlockPuzzle
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //DialogResult result = MessageBox.Show(Constants.ExitGameText, Constants.ExitGameCaption, MessageBoxButtons.YesNo);
-            //if (result != DialogResult.Yes)
-            //{
-            //    e.Cancel = true;
-            //}
+            if (!nudConfirm.Checked)
+            {
+                e.Cancel = false;
+                return;
+            }
+            DialogResult result = MessageBox.Show(Constants.ExitGameText, Constants.ExitGameCaption, MessageBoxButtons.YesNo);
+            if (result != DialogResult.Yes)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

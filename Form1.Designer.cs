@@ -54,10 +54,13 @@
             this.nudWidth = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.nudConfirm = new System.Windows.Forms.CheckBox();
+            this.nudDisableSound = new System.Windows.Forms.CheckBox();
             this.tbpHelp = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tbpPlay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctNext)).BeginInit();
@@ -213,6 +216,8 @@
             // 
             // tbpSettings
             // 
+            this.tbpSettings.Controls.Add(this.label13);
+            this.tbpSettings.Controls.Add(this.label12);
             this.tbpSettings.Controls.Add(this.btnEditSettings);
             this.tbpSettings.Controls.Add(this.label5);
             this.tbpSettings.Controls.Add(this.label3);
@@ -224,6 +229,7 @@
             this.tbpSettings.Controls.Add(this.nudWidth);
             this.tbpSettings.Controls.Add(this.label1);
             this.tbpSettings.Controls.Add(this.nudConfirm);
+            this.tbpSettings.Controls.Add(this.nudDisableSound);
             this.tbpSettings.Location = new System.Drawing.Point(4, 29);
             this.tbpSettings.Name = "tbpSettings";
             this.tbpSettings.Padding = new System.Windows.Forms.Padding(3);
@@ -375,10 +381,19 @@
             // 
             this.nudConfirm.Checked = true;
             this.nudConfirm.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.nudConfirm.Location = new System.Drawing.Point(327, 242);
+            this.nudConfirm.Location = new System.Drawing.Point(327, 400);
             this.nudConfirm.Name = "nudConfirm";
             this.nudConfirm.Size = new System.Drawing.Size(120, 26);
             this.nudConfirm.TabIndex = 7;
+            // 
+            // nudDisableSound
+            // 
+            this.nudDisableSound.Checked = true;
+            this.nudDisableSound.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.nudDisableSound.Location = new System.Drawing.Point(327, 430);
+            this.nudDisableSound.Name = "nudDisableSound";
+            this.nudDisableSound.Size = new System.Drawing.Size(120, 26);
+            this.nudDisableSound.TabIndex = 7;
             // 
             // tbpHelp
             // 
@@ -411,6 +426,24 @@
             // timer
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(42, 400);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(94, 20);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "Confirm Exit";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(42, 430);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(121, 20);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Disable Sounds";
             // 
             // Form1
             // 
@@ -455,6 +488,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.CheckBox nudConfirm;
+        private System.Windows.Forms.CheckBox nudDisableSound;
         private System.Windows.Forms.NumericUpDown nudDepth;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown nudWidth;
@@ -472,5 +506,7 @@
         private System.Windows.Forms.Label lblRecord;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
