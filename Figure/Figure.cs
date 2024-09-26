@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Drawing;
 
 namespace BlockPuzzle
@@ -57,12 +56,12 @@ namespace BlockPuzzle
         /// <param name="gameField">game field</param>
         /// <returns>void</returns>
         /// </summary>
-        public void Fall(TypeOfCell[,] gameField)
+        public void Fall(TypeOfCell[,] gameField, bool DisableSound)
         {
             int depth = gameField.GetUpperBound(0) + 1;
             for (int index = 0; index < depth; index++)
             {
-                MoveDown(gameField);
+                MoveDown(gameField, DisableSound);
             }
         }
 
@@ -71,7 +70,7 @@ namespace BlockPuzzle
         /// <param name="gameField">game field</param>
         /// <returns>true if figure was descended</returns>
         /// </summary>
-        public bool MoveDown(TypeOfCell[,] gameField)
+        public bool MoveDown(TypeOfCell[,] gameField, bool DisableSound)
         {
             for (int index = 0; index < Position.Length; index++)
             {
@@ -96,7 +95,7 @@ namespace BlockPuzzle
         /// rotate figure by 90 degree
         /// <param name="gameField">game field</param>
         /// </summary>
-        public void Rotate(TypeOfCell[,] gameField)
+        public void Rotate(TypeOfCell[,] gameField, bool DisableSound)
         {
             //check for square
             if (TypeOfCell == TypeOfCell.StaticO)
@@ -123,8 +122,11 @@ namespace BlockPuzzle
             else
             {
                 ChangeFigurePosition.Invoke();
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.whoosh);
-                player.Play();
+                if (!DisableSound)
+                {
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.whoosh);
+                    player.Play();
+                }
             }
         }
 
@@ -152,7 +154,7 @@ namespace BlockPuzzle
         /// Move figure left
         /// <param name="gameField">game field</param>
         /// </summary>
-        public void MoveLeft(TypeOfCell[,] gameField)
+        public void MoveLeft(TypeOfCell[,] gameField, bool DisableSound)
         {
             for (int index = 0; index < Position.Length; index++)
             {
@@ -169,8 +171,11 @@ namespace BlockPuzzle
             else
             {
                 ChangeFigurePosition.Invoke();
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.woodblock);
-                player.Play();
+                if (!DisableSound)
+                {
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.woodblock);
+                    player.Play();
+                }
             }
         }
 
@@ -178,7 +183,7 @@ namespace BlockPuzzle
         /// Move figure right
         /// <param name="gameField">game field</param>
         /// </summary>
-        public void MoveRight(TypeOfCell[,] gameField)
+        public void MoveRight(TypeOfCell[,] gameField, bool DisableSound)
         {
             for (int index = 0; index < Position.Length; index++)
             {
@@ -195,8 +200,11 @@ namespace BlockPuzzle
             else
             {
                 ChangeFigurePosition.Invoke();
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.woodblock);
-                player.Play();
+                if (!DisableSound)
+                {
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.woodblock);
+                    player.Play();
+                }
             }
         }
     }

@@ -17,6 +17,8 @@ namespace BlockPuzzle
         private Color _backColorForField = Color.Black;
         private Color _backColorForFigure = Color.White;
 
+        private bool DisableSound;
+
         public Form1()
         {
             InitializeComponent();
@@ -44,6 +46,7 @@ namespace BlockPuzzle
             nudSpeed.Value = settings.speed;
             nudConfirm.Checked = settings.confirm;
             nudDisableSound.Checked = settings.disableSound;
+            DisableSound = settings.disableSound;
 
             // Work with records
             List<Player> players = WorkWithRecords.GetPlayers();
@@ -55,10 +58,8 @@ namespace BlockPuzzle
             int depth = Convert.ToInt32(nudDepth.Value);
             int width = Convert.ToInt32(nudWidth.Value);
             int speed = Convert.ToInt32(nudSpeed.Value);
-            bool confirmExit = Convert.ToBoolean(nudConfirm.Checked);
-            bool disableSound = Convert.ToBoolean(nudDisableSound.Checked);
 
-            WorkWithSettings.SaveSettings(depth, width, speed, confirmExit, disableSound);
+            WorkWithSettings.SaveSettings(depth, width, speed, nudConfirm.Checked, nudDisableSound.Checked);
         }
         #endregion 
 
@@ -85,7 +86,7 @@ namespace BlockPuzzle
             btnStop.Enabled = false;
 
             // Play end game sound
-            if (!nudDisableSound.Checked)
+            if (!DisableSound)
             {
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.notify);
                 player.Play();
@@ -222,11 +223,11 @@ namespace BlockPuzzle
         {
             if (e.KeyCode == Keys.W)
             {
-                _game.CurrentFigure.Rotate(_game.GameField);
+                _game.CurrentFigure.Rotate(_game.GameField, DisableSound);
             }
             else if (e.KeyCode == Keys.A)
             {
-                _game.CurrentFigure.MoveLeft(_game.GameField);
+                _game.CurrentFigure.MoveLeft(_game.GameField, DisableSound);
             }
             else if (e.KeyCode == Keys.S)
             {
@@ -234,7 +235,7 @@ namespace BlockPuzzle
             }
             else if (e.KeyCode == Keys.D)
             {
-                _game.CurrentFigure.MoveRight(_game.GameField);
+                _game.CurrentFigure.MoveRight(_game.GameField, DisableSound);
             }
         }
 
@@ -244,11 +245,11 @@ namespace BlockPuzzle
             if (_game == null) return false;
             if (keyData == Keys.Up)
             {
-                _game.CurrentFigure.Rotate(_game.GameField);
+                _game.CurrentFigure.Rotate(_game.GameField, DisableSound);
             }
             else if (keyData == Keys.Left)
             {
-                _game.CurrentFigure.MoveLeft(_game.GameField);
+                _game.CurrentFigure.MoveLeft(_game.GameField, DisableSound);
             }
             else if (keyData == Keys.Down)
             {
@@ -256,7 +257,7 @@ namespace BlockPuzzle
             }
             else if (keyData == Keys.Right)
             {
-                _game.CurrentFigure.MoveRight(_game.GameField);
+                _game.CurrentFigure.MoveRight(_game.GameField, DisableSound);
             }
             else if (keyData == Keys.Escape)
             {
@@ -264,8 +265,8 @@ namespace BlockPuzzle
             }
             else if (keyData == Keys.Space)
             {
-                _game.CurrentFigure.Fall(_game.GameField);
-                if (!nudDisableSound.Checked)
+                _game.CurrentFigure.Fall(_game.GameField, DisableSound);
+                if (!DisableSound)
                 {
                     System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.histicks);
                     player.Play();

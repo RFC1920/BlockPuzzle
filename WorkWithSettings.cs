@@ -44,8 +44,8 @@ namespace BlockPuzzle
                 sw.WriteLine(depth);
                 sw.WriteLine(width);
                 sw.WriteLine(speed);
-                sw.WriteLine(confirmExit);
-                sw.WriteLine(disableSound);
+                sw.WriteLine(confirmExit.ToString());
+                sw.WriteLine(disableSound.ToString());
             }
         }
 

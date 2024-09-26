@@ -25,9 +25,9 @@ namespace BlockPuzzle
         public int Width { get; }
         public int Depth { get; }
         public int Interval { get; }
-        public bool Confirm { get; }
+        public bool Confirm { get; private set; }
 
-        public bool DisableSound { get; }
+        public bool DisableSound { get; private set; }
 
         public Game()
         {
@@ -39,6 +39,7 @@ namespace BlockPuzzle
             Confirm = confirm;
             DisableSound = disableSound;
 
+            Console.WriteLine($"Depth: {Depth} Width:{Width} Confirm: {Confirm} DisableSound: {DisableSound}");
             GameField = new TypeOfCell[Depth, Width];
             _startColumn = Convert.ToInt32(Math.Round((double)Width / 2) - 1);
         }
@@ -69,7 +70,7 @@ namespace BlockPuzzle
         public void MoveFigureDown(TypeOfCell[,] gameField)
         {
             //move figure down by one
-            bool isFall = CurrentFigure.MoveDown(GameField);
+            bool isFall = CurrentFigure.MoveDown(GameField, DisableSound);
             if (!isFall)
             {
                 //fill the field with the current figure
@@ -113,7 +114,7 @@ namespace BlockPuzzle
             {
                 return;
             }
-            if (DisableSound != true)
+            if (!DisableSound)
             {
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.chimes);
                 player.Play();
